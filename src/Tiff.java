@@ -1,8 +1,13 @@
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
 import java.awt.Image;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.RandomAccessFile;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -10,20 +15,39 @@ import javax.swing.JOptionPane;
 import com.idrsolutions.image.tiff.TiffDecoder;
 
 public class Tiff {
-	private String filepath;
+//	private String filepath;
 	private BufferedImage[] pages;
 	private int numPages;
 	
-	public Tiff (String filepath) throws Exception {
-		this.filepath = filepath;
+	public Tiff (String filepath) throws Exception { // Create new Tiff object
+//		this.filepath = filepath;
 		RandomAccessFile raf = new RandomAccessFile(filepath,"r");
 		TiffDecoder decoder = new TiffDecoder(raf);
 		this.numPages = decoder.getPageCount();
 		this.pages = new BufferedImage[numPages];
-		for (int i = 1; i <= numPages; i++) {
+		for (int i = 1; i <= numPages; i++) { // Add all pages to pages array
 			BufferedImage decodedImage = decoder.read(i);
 			pages[i - 1] = decodedImage;
 		}
+	}
+	
+	public Tiff (byte[][] byteArray) throws IOException {
+		this.numPages = byteArray.length;
+		this.pages = new BufferedImage[numPages];
+		for (int i = 0; i < numPages; i++) {
+			pages[i] = createImageFromBytes(byteArray[i]);
+		}
+		
+		ImageIO.write(pages[0], "tif", new File("/Users/Albert/Desktop/Test.TIF"));
+	}
+	
+	private BufferedImage createImageFromBytes(byte[] imageData) {
+	    ByteArrayInputStream bais = new ByteArrayInputStream(imageData);
+	    try {
+	        return ImageIO.read(bais);
+	    } catch (IOException e) {
+	        throw new RuntimeException(e);
+	    }
 	}
 	
 	public int getHeight () {
@@ -34,11 +58,11 @@ public class Tiff {
 		return pages[0].getWidth();
 	}
 	
-	public byte[] getPixels (int page) throws Exception {
-		if (page > numPages) {
+	public byte[] getPixels (int pageIndex) throws Exception { // Get array of all pixels of given page (0 = black, -1 = white)
+		if (pageIndex - 1 > numPages) {
 			throw new Exception("Page number out of bounds.");
 		}
-		byte[] pixels = ((DataBufferByte) pages[page].getRaster().getDataBuffer()).getData();
+		byte[] pixels = ((DataBufferByte) pages[pageIndex].getRaster().getDataBuffer()).getData();
 		return pixels;
 	}
 	
@@ -46,14 +70,14 @@ public class Tiff {
 		return numPages;
 	}
 	
-	public BufferedImage getPage (int page) throws Exception {
-		if (page > numPages) {
+	public BufferedImage getPage (int pageIndex) throws Exception { // Get page from given index
+		if (pageIndex - 1 > numPages) {
 			throw new Exception("Page number out of bounds.");
 		}
-		return pages[page];
+		return pages[pageIndex];
 	}
 	
-	public static void viewImage (Image image) {
+	public static void viewImage (Image image) { // Display image
 		Image imageScaled = image.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);
 		JOptionPane.showMessageDialog(null, new JLabel(new ImageIcon(imageScaled)));
 	}
