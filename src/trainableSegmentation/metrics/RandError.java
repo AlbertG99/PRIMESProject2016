@@ -116,16 +116,34 @@ public class RandError extends Metrics
 		try{
 			for(int i = 1; i <= labelSlices.getSize(); i++)
 			{
+				try {
 				futures.add(exe.submit( getRandErrorConcurrent(labelSlices.getProcessor(i).convertToFloat(),
 											proposalSlices.getProcessor(i).convertToFloat(),										
 											binaryThreshold ) ) );
+				}
+				catch (java.lang.OutOfMemoryError ex) {
+					System.gc();
+					i--;
+				}
 			}
 
 			// Wait for the jobs to be done
-			for(Future<Double> f : futures)
+//			for(Future<Double> f : futures)
+//			{
+//				randError += f.get();				
+//			}
+			for(int i = 0; i < futures.size(); i++)
 			{
-				randError += f.get();				
-			}			
+				try {
+					Future<Double> f = futures.get(i);
+					randError += f.get();
+					//i++;
+				}
+				catch (java.lang.OutOfMemoryError ex) {
+					System.gc();
+					i--;
+				}
+			}
 		}
 		catch(Exception ex)
 		{
