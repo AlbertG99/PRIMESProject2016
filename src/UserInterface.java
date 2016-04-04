@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -128,7 +129,7 @@ public class UserInterface {
 					if (!path.substring(path.length() - 4).toLowerCase().equals(".tif")) {
 						path += ".tif";
 					}
-					System.out.println(path);
+//					System.out.println(path);
 
 					graphPath.set(path);
 
@@ -224,7 +225,20 @@ public class UserInterface {
 		return inputs;
 	}
 	
-	public static void showPopupText (String message) {
-		 JOptionPane.showMessageDialog(new JFrame(), message);
+	public static void showPopupText (String message, boolean copyable) {
+		if (!copyable) {
+			JOptionPane.showMessageDialog(new JFrame(), message);
+		}
+		else {
+			JFrame frame = new JFrame();
+			JPanel panel = new JPanel();
+			JTextField text = new JTextField(message);
+			text.setEditable(false);
+			panel.add(text);
+			int result = JOptionPane.showConfirmDialog(frame, panel, "Result", JOptionPane.OK_CANCEL_OPTION);
+			if (result != JOptionPane.OK_OPTION) {
+				System.exit(0);
+			}
+		}
 	}
 }

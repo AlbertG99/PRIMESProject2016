@@ -1,3 +1,4 @@
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 import ij.IJ;
@@ -20,6 +21,7 @@ public class Main {
 		
 		double errorVal = 0.0;
 		if (error.equals("Pixel Error")) { // Run pixel error
+			pBar.setTitle("Running pixel error...");
 			pBar.setLabel("Getting TIFFs...");
 			Tiff originalLabels = new Tiff(originalLabelsPath);
 			Tiff proposedLabels = new Tiff(proposedLabelsPath);
@@ -29,32 +31,34 @@ public class Main {
 			if (createPixelImage) {
 				String filename = graphPath;
 				pBar.setLabel("Creating image...");
-				ViewImage.create3DBufferedImage(fullOutput, originalLabels.getWidth(), originalLabels.getHeight(), filename, pBar);
+				BufferedImage[] imageList = ViewImage.create3DBufferedImage(fullOutput, originalLabels.getWidth(), originalLabels.getHeight(), filename, pBar);
 				pBar.setVisible(false);
 				ViewImage.view3DImage(filename, "The " + error.toLowerCase() + " is: " + errorVal);
 			}
 			else {
 				pBar.setVisible(false);
-				UserInterface.showPopupText("The " + error.toLowerCase() + " is: " + errorVal);
+				UserInterface.showPopupText("The " + error.toLowerCase() + " is: " + errorVal, true);
 			}
 		}
-		else if (error.equals("Rand Error")) {
+		else if (error.equals("Rand Error")) { // Run rand error
+			pBar.setTitle("Running rand error...");
 			pBar.setLabel("Getting TIFFs...");
 			ImagePlus originalLabels = IJ.openImage(originalLabelsPath);
 			ImagePlus proposedLabels = IJ.openImage(proposedLabelsPath);
 			pBar.setLabel("Calculating error...");
 			errorVal = Errors.randError(originalLabels, proposedLabels);
 			pBar.setVisible(false);
-			UserInterface.showPopupText("The " + error.toLowerCase() + " is: " + errorVal);
+			UserInterface.showPopupText("The " + error.toLowerCase() + " is: " + errorVal, true);
 		}
-		else if (error.equals("Warping Error")) {
+		else if (error.equals("Warping Error")) { // Run warping error
+			pBar.setTitle("Running warping error...");
 			pBar.setLabel("Getting TIFFs...");
 			ImagePlus originalLabels = IJ.openImage(originalLabelsPath);
 			ImagePlus proposedLabels = IJ.openImage(proposedLabelsPath);
 			pBar.setLabel("Calculating error...");
 			errorVal = Errors.warpingError(originalLabels, proposedLabels);
 			pBar.setVisible(false);
-			UserInterface.showPopupText("The " + error.toLowerCase() + " is: " + errorVal);
+			UserInterface.showPopupText("The " + error.toLowerCase() + " is: " + errorVal, true);
 		}
 		
 		System.exit(0); // Exit application		

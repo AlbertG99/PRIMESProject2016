@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 import java.awt.image.BufferedImage;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -47,7 +49,7 @@ public class ViewImage {
 		return bufferedImage;
 	}
 	
-	public static void create3DBufferedImage (byte[][] pixels, int width, int height, String filename, ProgressBar pBar) throws IOException {
+	public static BufferedImage[] create3DBufferedImage (byte[][] pixels, int width, int height, String filename, ProgressBar pBar) throws IOException {
 		BufferedImage[] image = new BufferedImage[pixels.length];
 		for (int i = 0; i < pixels.length; i++) {
 			pBar.setPercent((i * 100) / pixels.length);
@@ -64,7 +66,9 @@ public class ViewImage {
 		}
 		params.setExtraImages(vector.iterator()); 
 		encoder.encode(image[0]); 
-		out.close(); 
+		out.close();
+		
+		return image;
 	}
 	
 	// Display images
@@ -99,10 +103,12 @@ public class ViewImage {
 		c.fill = GridBagConstraints.BOTH;
 		c.anchor = GridBagConstraints.CENTER;
 		c.gridy = 0;
-		panel.add(new JLabel(label), c);
+		JTextField labelField = new JTextField(label);
+		labelField.setEditable(false);
+		panel.add(labelField, c);
 		c.gridy += 1;
 		ImageIcon imageIcon = new ImageIcon(imageScaled);
-		JLabel imageLabel = new JLabel(imageIcon); 
+		JLabel imageLabel = new JLabel(imageIcon);
 		panel.add(imageLabel, c);
 		c.gridy += 1;
 		Scrollbar scrollbar = new Scrollbar(Scrollbar.HORIZONTAL, 1, 1, 1, numPages + 1);
@@ -145,6 +151,133 @@ public class ViewImage {
 				imageLabel.setIcon(imageIcon);
 				currLayer.setText("" + val);
 				panel.repaint();
+			}
+		});
+		imageLabel.addMouseWheelListener(new MouseWheelListener() {
+			public void mouseWheelMoved(MouseWheelEvent e) {
+				if (e.getScrollType() == MouseWheelEvent.WHEEL_UNIT_SCROLL) {
+					int scrollAmt = e.getWheelRotation();
+					int currVal = scrollbar.getValue();
+					int newVal = currVal + scrollAmt;
+					if (newVal > numPages) {
+						newVal = numPages;
+					}
+					else if (newVal < 1) {
+						newVal = 1;
+					}
+					
+					BufferedImage image2 = null;
+					int val = 1;
+					try {
+						val = newVal;
+						image2 = decoder.read(val);
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					Image imageScaled2 = image2.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);
+					imageIcon.setImage(imageScaled2);
+					imageLabel.setIcon(imageIcon);
+					currLayer.setText("" + val);
+					scrollbar.setValue(val);
+					panel.repaint();
+				}
+			}
+		});
+		JOptionPane.showMessageDialog(null, panel);
+	}
+	
+	public static void view3DImage (BufferedImage[] imageList, String label) throws Exception {
+		BufferedImage image = imageList[0];
+		int numPages = imageList.length;
+		Image imageScaled = image.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);
+		final JPanel panel = new JPanel(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.ipadx = 0;
+		c.ipady = 0;
+		c.fill = GridBagConstraints.BOTH;
+		c.anchor = GridBagConstraints.CENTER;
+		c.gridy = 0;
+		JTextField labelField = new JTextField(label);
+		labelField.setEditable(false);
+		panel.add(labelField, c);
+		c.gridy += 1;
+		ImageIcon imageIcon = new ImageIcon(imageScaled);
+		JLabel imageLabel = new JLabel(imageIcon);
+		panel.add(imageLabel, c);
+		c.gridy += 1;
+		Scrollbar scrollbar = new Scrollbar(Scrollbar.HORIZONTAL, 1, 1, 1, numPages + 1);
+		panel.add(scrollbar, c);
+		c.gridy += 1;
+		JTextField currLayer = new JTextField("1", 10);
+		currLayer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+				BufferedImage image2 = null;
+				int val = 1;
+				try {
+					val = Integer.parseInt(currLayer.getText());
+					image2 = imageList[val];
+					Image imageScaled2 = image2.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);
+					imageIcon.setImage(imageScaled2);
+					imageLabel.setIcon(imageIcon);
+					scrollbar.setValue(val);
+					panel.repaint();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+//					e1.printStackTrace();
+				}
+				
+			}
+		});
+		panel.add(currLayer, c);
+		scrollbar.addAdjustmentListener(new AdjustmentListener() {
+			public void adjustmentValueChanged(AdjustmentEvent e) {
+				BufferedImage image2 = null;
+				int val = 1;
+				try {
+					val = scrollbar.getValue();
+					image2 = imageList[val];
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				Image imageScaled2 = image2.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);
+				imageIcon.setImage(imageScaled2);
+				imageLabel.setIcon(imageIcon);
+				currLayer.setText("" + val);
+				panel.repaint();
+			}
+		});
+		imageLabel.addMouseWheelListener(new MouseWheelListener() {
+			public void mouseWheelMoved(MouseWheelEvent e) {
+				if (e.getScrollType() == MouseWheelEvent.WHEEL_UNIT_SCROLL) {
+					int scrollAmt = e.getWheelRotation();
+					int currVal = scrollbar.getValue();
+					int newVal = currVal + scrollAmt;
+					if (newVal > numPages) {
+						newVal = numPages;
+					}
+					else if (newVal < 1) {
+						newVal = 1;
+					}
+					
+					BufferedImage image2 = null;
+					int val = 1;
+					try {
+						val = newVal;
+						image2 = imageList[val];
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					Image imageScaled2 = image2.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);
+					imageIcon.setImage(imageScaled2);
+					imageLabel.setIcon(imageIcon);
+					currLayer.setText("" + val);
+					scrollbar.setValue(val);
+					panel.repaint();
+				}
 			}
 		});
 		JOptionPane.showMessageDialog(null, panel);

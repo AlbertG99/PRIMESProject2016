@@ -32,8 +32,12 @@ public class ProgressBar {
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
 		frame.setVisible(true);
-		frame.setTitle("Running...");
+		frame.setTitle("");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	public void setTitle (String title) {
+		frame.setTitle(title);
 	}
 	
 	public void setVisible (boolean bool) {
