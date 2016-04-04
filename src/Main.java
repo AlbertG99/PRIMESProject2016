@@ -1,143 +1,63 @@
-import trainableSegmentation.metrics.WarpingError;
-import trainableSegmentation.metrics.PixelError;
-import trainableSegmentation.metrics.RandError;
+import java.util.ArrayList;
+
 import ij.IJ;
 import ij.ImagePlus;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
 		System.gc();
-//		Tiff tiff1 = new Tiff ("/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/Example/Uygar.TIF");
-//		Tiff tiff2 = new Tiff ("/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/Example/Bandy.TIF");
-//		checkCompatibility(tiff1, tiff2);
-		// original labels
-		ImagePlus originalLabels = IJ.openImage("/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/Example/Uygar.TIF");
-		// proposed (new) labels
-		ImagePlus proposedLabels = IJ.openImage("/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/Example/Bandy.TIF");
 		
-		randError(originalLabels, proposedLabels);
-		pixelError(originalLabels, proposedLabels);
-		//System.out.println(pixelError(tiff1, tiff2));
-	}
-	
-	public static void pixelError (ImagePlus originalLabels, ImagePlus proposedLabels) {
-		// threshold to binarize labels (just in case they are not binary)
-		double threshold = 0.5;
-
-		PixelError metric = new PixelError(originalLabels, proposedLabels);
+		// Get inputs
+		ArrayList<Object> inputs = UserInterface.getInput();
+		String originalLabelsPath = ((StringStorage)inputs.get(0)).toString();
+		String proposedLabelsPath = ((StringStorage)inputs.get(1)).toString();
+		String error = (String)inputs.get(2);
+		boolean createPixelImage = (boolean)inputs.get(3);
+		String graphPath = ((StringStorage)inputs.get(4)).toString();
 		
-		System.gc();
-		double pixelError = metric.getMetricValue( threshold );
-
-		IJ.log("Pixel error between source image " + originalLabels.getTitle() + " and target image " + proposedLabels.getTitle() + " = " + pixelError);
-	}
-	
-	public static void randError (ImagePlus originalLabels, ImagePlus proposedLabels) {
-		// threshold to binarize labels (just in case they are not binary)
-		double threshold = 0.5;
-
-		RandError metric = new RandError(originalLabels, proposedLabels);
+		// Create progress bar
+		ProgressBar pBar = new ProgressBar();
 		
-		System.gc();
-		double randError = metric.getMetricValue( threshold );
-
-		IJ.log("Rand error between source image " + originalLabels.getTitle() + " and target image " + proposedLabels.getTitle() + " = " + randError);
-	}
-
-	public static void warpingError (ImagePlus originalLabels, ImagePlus proposedLabels) { //Source: http://fiji.sc/Topology_preserving_warping_error
-		// mask with geometric constraints
-		ImagePlus mask = IJ.openImage("/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/Example/Bandy.TIF"); // What is mask?
-
-		// threshold to binarize labels (just in case they are not binary)
-		double threshold = 0.5;
-
-		WarpingError metric = new WarpingError( originalLabels, proposedLabels, mask );
-		
-		System.gc();
-		double warpingError = metric.getMetricValue( threshold );
-
-		IJ.log("Warping error between source image " + originalLabels.getTitle() + " and target image " + proposedLabels.getTitle() + " = " + warpingError);
-	}
-
-//	public static byte[][] pixelError (Tiff tiff1, Tiff tiff2) throws Exception {
-//		int numPages = tiff1.getNumPages();
-//		int numPixels = tiff1.getPixels(0).length;
-//
-//		byte[][] fullOutput = new byte[numPages][numPixels];
-//
-//		for (int page = 0; page < numPages; page++) {
-//			try {
-//				fullOutput[page] = comparePage(tiff1.getPixels(page), tiff2.getPixels(page));
-//			}
-//			catch (OutOfMemoryError e){
-//				page--;
-//				System.gc();
-//			}
-//		}
-//
-//		return fullOutput;
-//	}
-	
-	public static double pixelError (Tiff tiff1, Tiff tiff2) throws Exception {
-		int numPages = tiff1.getNumPages();
-		int numPixels = tiff1.getPixels(0).length;
-
-		byte[][] fullOutput = new byte[numPages][numPixels];
-
-		for (int page = 0; page < numPages; page++) {
-			try {
-				fullOutput[page] = comparePage(tiff1.getPixels(page), tiff2.getPixels(page));
+		double errorVal = 0.0;
+		if (error.equals("Pixel Error")) { // Run pixel error
+			pBar.setLabel("Getting TIFFs...");
+			Tiff originalLabels = new Tiff(originalLabelsPath);
+			Tiff proposedLabels = new Tiff(proposedLabelsPath);
+			byte[][] fullOutput = Errors.pixelErrorArray(originalLabels, proposedLabels);
+			pBar.setLabel("Calculating error...");
+			errorVal = Errors.pixelError(originalLabels.getNumPages(), originalLabels.getNumPixels(), fullOutput);
+			if (createPixelImage) {
+				String filename = graphPath;
+				pBar.setLabel("Creating image...");
+				ViewImage.create3DBufferedImage(fullOutput, originalLabels.getWidth(), originalLabels.getHeight(), filename, pBar);
+				pBar.setVisible(false);
+				ViewImage.view3DImage(filename, "The " + error.toLowerCase() + " is: " + errorVal);
 			}
-			catch (OutOfMemoryError e){
-				page--;
-				System.gc();
+			else {
+				pBar.setVisible(false);
+				UserInterface.showPopupText("The " + error.toLowerCase() + " is: " + errorVal);
 			}
 		}
-		
-		double count = 0;
-		
-		for (int i = 0; i < numPages; i++) {
-			for (int j = 0; j < numPixels; j++) {
-				if (fullOutput[i][j] == 1 || fullOutput[i][j] == 2) {
-					count++;
-				}
-			}
+		else if (error.equals("Rand Error")) {
+			pBar.setLabel("Getting TIFFs...");
+			ImagePlus originalLabels = IJ.openImage(originalLabelsPath);
+			ImagePlus proposedLabels = IJ.openImage(proposedLabelsPath);
+			pBar.setLabel("Calculating error...");
+			errorVal = Errors.randError(originalLabels, proposedLabels);
+			pBar.setVisible(false);
+			UserInterface.showPopupText("The " + error.toLowerCase() + " is: " + errorVal);
+		}
+		else if (error.equals("Warping Error")) {
+			pBar.setLabel("Getting TIFFs...");
+			ImagePlus originalLabels = IJ.openImage(originalLabelsPath);
+			ImagePlus proposedLabels = IJ.openImage(proposedLabelsPath);
+			pBar.setLabel("Calculating error...");
+			errorVal = Errors.warpingError(originalLabels, proposedLabels);
+			pBar.setVisible(false);
+			UserInterface.showPopupText("The " + error.toLowerCase() + " is: " + errorVal);
 		}
 		
-		return count/(numPages*numPixels);
-	}
-
-	public static byte[] comparePage (byte[] page1, byte[] page2) {
-		/*
-		0 = neither
-		1 = page1 only
-		2 = page2 only
-		3 = both
-		 */
-		int numPixels = page1.length;
-		byte[] comparison = new byte[numPixels];
-
-		int page1Pix;
-		int page2Pix;
-
-		for (int i = 0; i < numPixels; i++) {
-			page1Pix = page1[i];
-			page2Pix = page2[i];
-			if (page1Pix == -1 && page2Pix == 0) {
-				comparison[i] = 1;
-			}
-			else if (page1Pix == 0 && page2Pix == -1) {
-				comparison[i] = 2;
-			}
-			else if (page1Pix == -1 && page2Pix == -1) {
-				comparison[i] = 3;
-			}
-			else { //if (page1Pix == 0 && page2Pix == 0)
-				comparison[i] = 0;
-			}
-		}
-
-		return comparison;
+		System.exit(0); // Exit application		
 	}
 
 	public static void checkCompatibility (Tiff tiff1, Tiff tiff2) throws Exception { // Checks if two TIFF files are compatible and can be further worked with

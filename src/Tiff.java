@@ -1,16 +1,11 @@
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
-import java.awt.Image;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.RandomAccessFile;
 
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 import com.idrsolutions.image.tiff.TiffDecoder;
 
@@ -58,6 +53,10 @@ public class Tiff {
 		return pages[0].getWidth();
 	}
 	
+	public int getNumPixels () {
+		return getHeight() * getWidth();
+	}
+		
 	public byte[] getPixels (int pageIndex) throws Exception { // Get array of all pixels of given page (0 = black, -1 = white)
 		if (pageIndex - 1 > numPages) {
 			throw new Exception("Page number out of bounds.");
@@ -75,10 +74,5 @@ public class Tiff {
 			throw new Exception("Page number out of bounds.");
 		}
 		return pages[pageIndex];
-	}
-	
-	public static void viewImage (Image image) { // Display image
-		Image imageScaled = image.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);
-		JOptionPane.showMessageDialog(null, new JLabel(new ImageIcon(imageScaled)));
 	}
 }
