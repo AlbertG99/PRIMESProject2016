@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -5,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -234,6 +236,8 @@ public class UserInterface {
 			JPanel panel = new JPanel();
 			JTextField text = new JTextField(message);
 			text.setEditable(false);
+			text.setBackground(new Color(238, 238, 238));
+			text.setBorder(BorderFactory.createLineBorder(new Color(238, 238, 238), 0));
 			panel.add(text);
 			int result = JOptionPane.showConfirmDialog(frame, panel, "Result", JOptionPane.OK_CANCEL_OPTION);
 			if (result != JOptionPane.OK_OPTION) {

@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
@@ -6,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.awt.image.BufferedImage;
@@ -16,7 +19,9 @@ import java.io.OutputStream;
 import java.io.RandomAccessFile;
 import java.util.Vector;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -96,17 +101,22 @@ public class ViewImage {
 		BufferedImage image = decoder.read(1);
 		Image imageScaled = image.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);
 		final JPanel panel = new JPanel(new GridBagLayout());
+		panel.setFocusable(true);
+		panel.requestFocusInWindow();
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.ipadx = 0;
-		c.ipady = 0;
+		c.ipady = 3;
 		c.fill = GridBagConstraints.BOTH;
 		c.anchor = GridBagConstraints.CENTER;
 		c.gridy = 0;
 		JTextField labelField = new JTextField(label);
 		labelField.setEditable(false);
+		labelField.setBackground(new Color(238, 238, 238));
+		labelField.setBorder(BorderFactory.createLineBorder(new Color(238, 238, 238), 0));
 		panel.add(labelField, c);
 		c.gridy += 1;
+		c.ipady = 0;
 		ImageIcon imageIcon = new ImageIcon(imageScaled);
 		JLabel imageLabel = new JLabel(imageIcon);
 		panel.add(imageLabel, c);
@@ -128,8 +138,7 @@ public class ViewImage {
 					scrollbar.setValue(val);
 					panel.repaint();
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
-//					e1.printStackTrace();
+					e1.printStackTrace();
 				}
 				
 			}
@@ -143,7 +152,6 @@ public class ViewImage {
 					val = scrollbar.getValue();
 					image2 = decoder.read(val);
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 				Image imageScaled2 = image2.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);
@@ -172,7 +180,6 @@ public class ViewImage {
 						val = newVal;
 						image2 = decoder.read(val);
 					} catch (Exception e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 					Image imageScaled2 = image2.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);
@@ -184,6 +191,49 @@ public class ViewImage {
 				}
 			}
 		});
+		panel.addKeyListener(new KeyListener() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+			}
+			@Override
+			public void keyPressed(KeyEvent e) {
+//				System.out.println(e.getKeyCode());
+				int moveAmt = 0;
+				if (e.getKeyCode()==39) { // Right arrow
+					moveAmt = 1;
+				}
+				else if (e.getKeyCode()==37) { // Left arrow
+					moveAmt = -1;
+				}
+				int currVal = scrollbar.getValue();
+				int newVal = currVal + moveAmt;
+				if (newVal > numPages) {
+					newVal = numPages;
+				}
+				else if (newVal < 1) {
+					newVal = 1;
+				}
+
+				BufferedImage image2 = null;
+				int val = 1;
+				try {
+					val = newVal;
+					image2 = decoder.read(val);
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+				Image imageScaled2 = image2.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);
+				imageIcon.setImage(imageScaled2);
+				imageLabel.setIcon(imageIcon);
+				currLayer.setText("" + val);
+				scrollbar.setValue(val);
+				panel.repaint();
+			}
+			@Override
+			public void keyReleased(KeyEvent e) {
+
+			}
+		});
 		JOptionPane.showMessageDialog(null, panel);
 	}
 	
@@ -192,6 +242,8 @@ public class ViewImage {
 		int numPages = imageList.length;
 		Image imageScaled = image.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);
 		final JPanel panel = new JPanel(new GridBagLayout());
+		panel.setFocusable(true);
+		panel.requestFocusInWindow();
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.ipadx = 0;
@@ -224,8 +276,7 @@ public class ViewImage {
 					scrollbar.setValue(val);
 					panel.repaint();
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
-//					e1.printStackTrace();
+					e1.printStackTrace();
 				}
 				
 			}
@@ -239,7 +290,6 @@ public class ViewImage {
 					val = scrollbar.getValue();
 					image2 = imageList[val];
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 				Image imageScaled2 = image2.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);
@@ -268,7 +318,6 @@ public class ViewImage {
 						val = newVal;
 						image2 = imageList[val];
 					} catch (Exception e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 					Image imageScaled2 = image2.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);
@@ -280,6 +329,50 @@ public class ViewImage {
 				}
 			}
 		});
+//		imageLabel.addKeyListener(new KeyListener() {
+//			@Override
+//			public void keyTyped(KeyEvent e) {
+//				
+//			}
+//			@Override
+//			public void keyPressed(KeyEvent e) {
+//				System.out.println(e.getKeyCode());
+//				int moveAmt = 0;
+//				if (e.getKeyCode()==39) { // Right arrow
+//					moveAmt = -1;
+//				}
+//				else if (e.getKeyCode()==37) { // Left arrow
+//					moveAmt = 1;
+//				}
+//				int currVal = scrollbar.getValue();
+//				int newVal = currVal + moveAmt;
+//				if (newVal > numPages) {
+//					newVal = numPages;
+//				}
+//				else if (newVal < 1) {
+//					newVal = 1;
+//				}
+//				
+//				BufferedImage image2 = null;
+//				int val = 1;
+//				try {
+//					val = newVal;
+//					image2 = imageList[val];
+//				} catch (Exception e1) {
+//					e1.printStackTrace();
+//				}
+//				Image imageScaled2 = image2.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);
+//				imageIcon.setImage(imageScaled2);
+//				imageLabel.setIcon(imageIcon);
+//				currLayer.setText("" + val);
+//				scrollbar.setValue(val);
+//				panel.repaint();
+//			}
+//			@Override
+//			public void keyReleased(KeyEvent e) {
+//				
+//			}
+//        });
 		JOptionPane.showMessageDialog(null, panel);
 	}
 }
