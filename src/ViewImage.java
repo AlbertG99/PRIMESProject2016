@@ -21,7 +21,6 @@ import java.util.Vector;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -42,11 +41,17 @@ public class ViewImage {
 		
 		for (int i = 0; i < pagePixels.length; i++) {
 			int color = pagePixels[i];
-			if (pagePixels[i] == 0 || pagePixels[i] == 3) {
-				color = 0;
+			if (pagePixels[i] == 0) {
+				color = new Color(105, 105, 105).getRGB();
 			}
-			else {
+			else if (pagePixels[i] == 3) {
 				color = -1;
+			}
+			else if (pagePixels[i] == 1) {
+				color = new Color(0, 0, 255).getRGB();
+			}
+			else if (pagePixels[i] == 2) {
+				color = new Color(0, 255, 0).getRGB();
 			}
 			bufferedImage.setRGB(i % width, i / width, color);
 		}
@@ -107,6 +112,7 @@ public class ViewImage {
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.ipadx = 0;
 		c.ipady = 3;
+		c.gridwidth = 4;
 		c.fill = GridBagConstraints.BOTH;
 		c.anchor = GridBagConstraints.CENTER;
 		c.gridy = 0;
@@ -143,7 +149,33 @@ public class ViewImage {
 				
 			}
 		});
+		c.gridwidth = 1;
+		c.gridx = 0;
+		JTextField white = new JTextField("Both", 10);
+		white.setEditable(false);
+		white.setBackground(new Color(255, 255, 255));
+		panel.add(white, c);
+		c.gridx += 1;
+		JTextField blue = new JTextField("Only 1", 10);
+		blue.setEditable(false);
+		blue.setBackground(new Color(0, 0, 255));
+		panel.add(blue, c);
+		c.gridx += 1;
+		JTextField green = new JTextField("Only 2", 10);
+		green.setEditable(false);
+		green.setBackground(new Color(0, 255, 0));
+		panel.add(green, c);
+		c.gridx += 1;
+		JTextField black = new JTextField("Neither", 10);
+		black.setEditable(false);
+		black.setBackground(new Color(105, 105, 105));
+		panel.add(black, c);
+		c.gridy += 1;
+		c.gridx = 0;
+		panel.add(new JLabel("Layer:"), c);
+		c.gridx = 1;
 		panel.add(currLayer, c);
+		c.gridwidth = 4;
 		scrollbar.addAdjustmentListener(new AdjustmentListener() {
 			public void adjustmentValueChanged(AdjustmentEvent e) {
 				BufferedImage image2 = null;
