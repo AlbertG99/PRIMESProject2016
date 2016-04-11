@@ -137,12 +137,14 @@ public class ViewImage {
 				int val = 1;
 				try {
 					val = Integer.parseInt(currLayer.getText());
-					image2 = decoder.read(val);
-					Image imageScaled2 = image2.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);
-					imageIcon.setImage(imageScaled2);
-					imageLabel.setIcon(imageIcon);
-					scrollbar.setValue(val);
-					panel.repaint();
+					if (val > 0 && val <= numPages) {
+						image2 = decoder.read(val);
+						Image imageScaled2 = image2.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);
+						imageIcon.setImage(imageScaled2);
+						imageLabel.setIcon(imageIcon);
+						scrollbar.setValue(val);
+						panel.repaint();
+					}
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}

@@ -30,13 +30,13 @@ public class UserInterface {
 		c.fill = GridBagConstraints.BOTH;
 		c.anchor = GridBagConstraints.CENTER;
 
-		final StringStorage file1Path = new StringStorage("/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/Example/Bandy.tif");
-		final JButton file1Button = new JButton("/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/Example/Bandy.tif");
+		final StringStorage file1Path = new StringStorage("/Users/Albert/Google Drive/Boyden PRIMES/Example/Bandy-1.tif");
+		final JButton file1Button = new JButton("/Users/Albert/Google Drive/Boyden PRIMES/Example/Bandy-1.tif");
 		file1Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
 				JFileChooser fileChooser = new JFileChooser();
 				//System.out.println(graphFileButton.getText());
-				fileChooser.setCurrentDirectory(new File(file1Button.getText()));
+				fileChooser.setCurrentDirectory(new File(file1Path.toString()));
 				FileFilter filter = new FileNameExtensionFilter("TIF file", new String[] {"tif", "TIF", "tiff", "TIFF"});
 				fileChooser.addChoosableFileFilter(filter);
 				fileChooser.setFileFilter(filter);
@@ -72,13 +72,13 @@ public class UserInterface {
 			}
 		});
 		
-		final StringStorage file2Path = new StringStorage("/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/Example/Uygar.tif");
-		final JButton file2Button = new JButton("/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/Example/Uygar.tif");
+		final StringStorage file2Path = new StringStorage("/Users/Albert/Google Drive/Boyden PRIMES/Example/Uygar-1.tif");
+		final JButton file2Button = new JButton("/Users/Albert/Google Drive/Boyden PRIMES/Example/Uygar-1.tif");
 		file2Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
 				JFileChooser fileChooser = new JFileChooser();
 				//System.out.println(graphFileButton.getText());
-				fileChooser.setCurrentDirectory(new File(file2Button.getText()));
+				fileChooser.setCurrentDirectory(new File(file2Path.toString()));
 				FileFilter filter = new FileNameExtensionFilter("TIF file", new String[] {"tif", "TIF", "tiff", "TIFF"});
 				fileChooser.addChoosableFileFilter(filter);
 				fileChooser.setFileFilter(filter);

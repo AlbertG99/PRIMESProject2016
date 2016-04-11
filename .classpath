@@ -2,226 +2,270 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/JDeli/jdeli.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageJ API/ij.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/ant-junit.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/ant-launcher.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/ant-nodeps.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/ant.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/args4j-2.0.25.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/asm-4.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/asm-analysis-4.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/asm-commons-4.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/asm-tree-4.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/asm-util-4.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/autocomplete-2.5.7.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/base64-2.3.8.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/batik-1.8.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/bcmail-jdk14-138.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/bcprov-jdk14-138.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/bigdataviewer-core-2.1.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/blas-0.8.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/bsh-2.0b4.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/bytelist-1.0.11.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/clojure-1.6.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/codemodel-2.6.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/collections-generic-4.01.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/commons-codec-1.8.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/commons-compress-1.4.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/commons-lang3-3.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/commons-math-2.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/commons-math3-3.4.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/commons-vfs2-2.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/datasets-0.8.1891.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/ejml-0.24.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/eventbus-1.4.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/f2jutil-0.8.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/fake-2.0.0-SNAPSHOT.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/ffmpeg-2.6.1-0.11.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/fiji-compat-2.0.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/fiji-lib-2.1.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/fiji-scripting-2.0.0-SNAPSHOT.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/gcc-runtime-0.8.1891.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/gentyref-1.1.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/gluegen-rt-2.3.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/gluegen-rt-main-2.3.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/graphics-0.8.1891.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/grDevices-0.8.1891.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/groovy-2.3.6.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/gson-2.2.4.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/guava-18.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/hamcrest-core-1.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/ij-1.50g.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/ij1-patcher-0.12.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-2.0.0-rc-44.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-common-0.19.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-deprecated-0.1.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-launcher-4.0.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-legacy-0.17.5.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-ops-0.24.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-plugins-commands-0.6.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-plugins-tools-0.3.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-plugins-uploader-ssh-0.3.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-plugins-uploader-webdav-0.2.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-scripting-0.2.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-ui-awt-0.3.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-ui-swing-0.17.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-updater-0.7.9.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagescience-3.0.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imageware-2.0.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imglib2-2.5.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imglib2-algorithm-0.3.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imglib2-algorithm-fft-0.1.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imglib2-algorithm-gpl-0.1.5.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imglib2-ij-2.0.0-beta-31.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imglib2-realtransform-2.0.0-beta-29.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imglib2-roi-0.4.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imglib2-ui-2.0.0-beta-29.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/invokebinder-1.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/itext-2.1.5.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/itextpdf-5.1.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/j3dcore-1.6.0-scijava-2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/j3dutils-1.6.0-scijava-2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jacl.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jai-codec-1.1.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jai-core-1.1.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jama-1.0.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/java-cup-0.11a.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/javac-1.6.0.24-ubuntu-fiji2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/javacpp-0.11.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/javassist-3.19.0-GA.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jcodings-1.0.10.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jcommon-1.0.23.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jdatepicker-1.3.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jdom2-2.0.6.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jep-2.4.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jffi-1.2.7-native.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jffi-1.2.7.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jfreechart-1.0.19.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jgoodies-common-1.7.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jgoodies-forms-1.7.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jgrapht-0.8.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jgraphx-1.10.4.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jhdf5-14.12.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jhotdraw-7.6.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jitk-tps-1.3.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jna-3.2.7.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jnr-constants-0.8.5.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jnr-enxio-0.4.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jnr-ffi-1.0.7.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jnr-netdb-1.1.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jnr-posix-3.0.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jnr-unixsocket-0.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jnr-x86asm-1.0.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/joal-2.3.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/joal-main-2.3.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jocl-2.3.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jocl-main-2.3.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/joda-time-2.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jogl-all-2.3.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jogl-all-main-2.3.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/joni-2.1.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jpedalSTD-2.80b11.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jruby-core-1.7.12.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jruby-stdlib-1.7.12.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/js.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jsch-0.1.49.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jtransforms-2.4.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jung-api-2.0.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jung-graph-impl-2.0.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/JWlz-1.4.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jython-shaded-2.5.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jzlib-1.1.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/kryo-2.24.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/languagesupport-2.5.8.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/lapack-0.8.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/legacy-imglib1-1.1.5.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/logback-classic-1.1.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/logback-core-1.1.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/mapdb-1.0.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/markdownj-0.3.0-1.0.2b4.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/maven-scm-api-1.4.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/maven-scm-provider-svn-commons-1.4.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/maven-scm-provider-svnexe-1.4.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/metadata-extractor-2.6.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/methods-0.8.1891.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/miglayout-3.7.4-swing.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/mij-1.3.6-fiji2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/mines-jtk-20151125.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/minimaven-2.2.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/minlog-1.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/mpicbg-1.1.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/mpicbg-trakem2-1.2.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/nailgun-server-0.9.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/native-lib-loader-2.1.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/netcdf-4.3.19.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/netlib-java-0.9.3-renjin-patched-2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/object-inspector-0.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/objenesis-2.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/opencsv-2.4.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/options-1.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/pal-optimization-2.0.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/pentaho-package-manager-1.0.8.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/perf4j-0.9.13.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/plexus-utils-1.5.6.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/postgresql-8.2-507.jdbc3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/regexp-1.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/renjin-appl-0.8.1891.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/renjin-core-0.8.1891.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/renjin-gnur-runtime-0.8.1891.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/renjin-script-engine-0.8.1891.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/rhino-1.7.6.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/rsyntaxtextarea-2.5.8.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scifio-0.27.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scifio-bf-compat-2.0.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scifio-cli-0.3.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scifio-hdf5-0.1.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scifio-jai-imageio-1.1.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scifio-lifesci-0.7.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scifio-ome-xml-0.13.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scifio-tools-0.14.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-common-2.50.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-config-2.0.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-expression-parser-2.1.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-plugins-commands-0.2.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-plugins-platforms-0.2.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-plugins-text-markdown-0.1.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-plugins-text-plain-0.1.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-ui-awt-0.1.4.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-ui-swing-0.7.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scripting-beanshell-0.2.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scripting-clojure-0.1.4.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scripting-groovy-0.2.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scripting-java-0.3.5.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scripting-javascript-0.4.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scripting-jruby-0.2.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scripting-jython-0.2.4.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scripting-renjin-0.1.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/slf4j-api-1.7.6.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/snakeyaml-1.13.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/spim_data-2.0.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/stats-0.8.1891.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/swing-checkbox-tree-1.0.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/T2-NIT-1.1.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/T2-TreelineGraph-1.1.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/tools-1.4.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/trove4j-3.0.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/udunits-4.3.18.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/utils-0.8.1891.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/vecmath-1.6.0-scijava-2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/VectorString-1.0.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/VIB-lib-2.1.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/wavelets-2.0.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/weave_jy2java-2.0.0-SNAPSHOT.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/weka-dev-3.7.11.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/xerbla-0.8.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/xercesImpl-2.8.1.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/xml-apis-1.3.03.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/xmpcore-5.1.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/xz-1.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/yecht-1.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/Anisotropic_Diffusion_2D-2.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/Anisotropic_Diffusion_2D-2.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/ant-junit.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/ant-launcher.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/ant-nodeps.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/ant.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/args4j-2.0.25.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/asm-4.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/asm-analysis-4.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/asm-commons-4.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/asm-tree-4.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/asm-util-4.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/autocomplete-2.5.7.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/base64-2.3.8.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/batik-1.8.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/bcmail-jdk14-138.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/bcprov-jdk14-138.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/bigdataviewer-core-2.1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/blas-0.8.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/bsh-2.0b4.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/bytelist-1.0.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/clojure-1.6.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/codemodel-2.6.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/collections-generic-4.01.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/commons-codec-1.8.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/commons-compress-1.4.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/commons-math-2.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/commons-math3-3.4.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/commons-vfs2-2.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/datasets-0.8.1891.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/ejml-0.24.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/eventbus-1.4.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/f2jutil-0.8.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/fake-2.0.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/ffmpeg-2.6.1-0.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/fiji-compat-2.0.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/fiji-lib-2.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/fiji-scripting-2.0.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/gcc-runtime-0.8.1891.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/gentyref-1.1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/gluegen-rt-2.3.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/gluegen-rt-main-2.3.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/graphics-0.8.1891.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/grDevices-0.8.1891.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/groovy-2.3.6.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/gson-2.2.4.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/guava-18.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/ij-1.50g.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/ij1-patcher-0.12.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-2.0.0-rc-44.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-common-0.19.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-deprecated-0.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-launcher-4.0.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-legacy-0.17.5.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-ops-0.24.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-plugins-commands-0.6.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-plugins-tools-0.3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-plugins-uploader-ssh-0.3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-plugins-uploader-webdav-0.2.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-scripting-0.2.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-ui-awt-0.3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-ui-swing-0.17.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagej-updater-0.7.9.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imagescience-3.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imageware-2.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imglib2-2.5.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imglib2-algorithm-0.3.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imglib2-algorithm-fft-0.1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imglib2-algorithm-gpl-0.1.5.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imglib2-ij-2.0.0-beta-31.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imglib2-realtransform-2.0.0-beta-29.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imglib2-roi-0.4.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/imglib2-ui-2.0.0-beta-29.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/invokebinder-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/itext-2.1.5.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/itextpdf-5.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/j3dcore-1.6.0-scijava-2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/j3dutils-1.6.0-scijava-2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jacl.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jai-codec-1.1.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jai-core-1.1.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jama-1.0.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/java-cup-0.11a.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/javac-1.6.0.24-ubuntu-fiji2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/javacpp-0.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/javassist-3.19.0-GA.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jcodings-1.0.10.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jdatepicker-1.3.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jdom2-2.0.6.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jep-2.4.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jffi-1.2.7-native.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jffi-1.2.7.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jgoodies-common-1.7.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jgoodies-forms-1.7.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jgrapht-0.8.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jgraphx-1.10.4.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jhdf5-14.12.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jhotdraw-7.6.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jitk-tps-1.3.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jna-3.2.7.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jnr-constants-0.8.5.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jnr-enxio-0.4.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jnr-ffi-1.0.7.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jnr-netdb-1.1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jnr-posix-3.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jnr-unixsocket-0.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jnr-x86asm-1.0.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/joal-2.3.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/joal-main-2.3.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jocl-2.3.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jocl-main-2.3.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/joda-time-2.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jogl-all-2.3.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jogl-all-main-2.3.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/joni-2.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jpedalSTD-2.80b11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jruby-core-1.7.12.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jruby-stdlib-1.7.12.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/js.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jsch-0.1.49.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jtransforms-2.4.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jung-api-2.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jung-graph-impl-2.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/JWlz-1.4.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jython-shaded-2.5.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/jzlib-1.1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/kryo-2.24.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/languagesupport-2.5.8.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/lapack-0.8.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/legacy-imglib1-1.1.5.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/logback-classic-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/logback-core-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/mapdb-1.0.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/markdownj-0.3.0-1.0.2b4.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/maven-scm-api-1.4.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/maven-scm-provider-svn-commons-1.4.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/maven-scm-provider-svnexe-1.4.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/metadata-extractor-2.6.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/methods-0.8.1891.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/miglayout-3.7.4-swing.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/mij-1.3.6-fiji2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/mines-jtk-20151125.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/minimaven-2.2.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/minlog-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/mpicbg-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/mpicbg-trakem2-1.2.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/nailgun-server-0.9.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/native-lib-loader-2.1.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/netcdf-4.3.19.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/netlib-java-0.9.3-renjin-patched-2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/object-inspector-0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/objenesis-2.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/opencsv-2.4.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/options-1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/pal-optimization-2.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/pentaho-package-manager-1.0.8.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/perf4j-0.9.13.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/plexus-utils-1.5.6.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/postgresql-8.2-507.jdbc3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/regexp-1.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/renjin-appl-0.8.1891.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/renjin-core-0.8.1891.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/renjin-gnur-runtime-0.8.1891.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/renjin-script-engine-0.8.1891.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/rhino-1.7.6.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/rsyntaxtextarea-2.5.8.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scifio-0.27.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scifio-bf-compat-2.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scifio-cli-0.3.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scifio-hdf5-0.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scifio-jai-imageio-1.1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scifio-lifesci-0.7.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scifio-ome-xml-0.13.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scifio-tools-0.14.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-common-2.50.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-config-2.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-expression-parser-2.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-plugins-commands-0.2.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-plugins-platforms-0.2.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-plugins-text-markdown-0.1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-plugins-text-plain-0.1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-ui-awt-0.1.4.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scijava-ui-swing-0.7.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scripting-beanshell-0.2.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scripting-clojure-0.1.4.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scripting-groovy-0.2.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scripting-java-0.3.5.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scripting-javascript-0.4.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scripting-jruby-0.2.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scripting-jython-0.2.4.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/scripting-renjin-0.1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/slf4j-api-1.7.6.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/snakeyaml-1.13.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/spim_data-2.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/stats-0.8.1891.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/swing-checkbox-tree-1.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/T2-NIT-1.1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/T2-TreelineGraph-1.1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/tools-1.4.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/trove4j-3.0.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/udunits-4.3.18.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/utils-0.8.1891.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/vecmath-1.6.0-scijava-2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/VectorString-1.0.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/VIB-lib-2.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/wavelets-2.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/weave_jy2java-2.0.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/weka-dev-3.7.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/xerbla-0.8.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/xercesImpl-2.8.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/xml-apis-1.3.03.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/xmpcore-5.1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/xz-1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/Fiji API/yecht-1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/commons-codec-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/commons-io-1.4.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-arcgrid-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdal-bindings-1.9.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdalarcbinarygrid-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdalarcgrid-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdalbsb-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdaldoq1-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdaldoq2-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdaldted-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdalecw-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdalecwjp2-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdalehdr-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdalenvihdr-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdalenvisat-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdalerdasimg-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdalframework-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdalgeotiff-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdalidrisi-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdaljpeg-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdalkakadujp2-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdalmrsid-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdalmrsidjp2-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-gdalnitf-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-geocore-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-imagereadmt-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-kakadu-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-kakadujni-5.2.6.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-nitf-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-png-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-streams-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-tiff-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-turbojpeg-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/imageio-ext-utilities-1.1.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/jai_codec-1.1.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/jai_core-1.1.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/jai_imageio-1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/junit-4.11.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/nitf-bindings-2.7-r1269.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/pngj-2.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/turbojpeg-wrapper-1.2.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageJ API/ij.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/JDeli/jdeli.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
