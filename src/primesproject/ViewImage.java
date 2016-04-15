@@ -1,3 +1,4 @@
+package primesproject;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -31,7 +32,33 @@ import com.sun.media.jai.codec.ImageCodec;
 import com.sun.media.jai.codec.ImageEncoder;
 import com.sun.media.jai.codec.TIFFEncodeParam;
 
+import ij.ImagePlus;
+import ij.ImageStack;
+import ij.process.ImageProcessor;
+
 public class ViewImage {
+	// Create mask
+	
+	public static BufferedImage createBlackImage (int width, int height) {
+		BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		for (int i = 0; i < width * height; i++) {
+			bufferedImage.setRGB(i % width, i / width, 1);
+		}
+		return bufferedImage;
+	}
+	
+	public static ImagePlus create3DBlackImage (int width, int height, int pages) {
+		ImageStack stack = new ImageStack(width, height, pages);
+		ImagePlus implus = new ImagePlus ("Mask", createBlackImage(width, height));
+		
+		for (int i = 0; i < pages; i++) {
+			stack.addSlice("Mask " + i, (ImageProcessor)implus.getChannelProcessor().clone(), i);
+//			System.out.println(i);
+		}
+		
+		return new ImagePlus("Mask", stack);
+	}
+	
 	// Create images
 	
 	public static BufferedImage createBufferedImage (byte[][] pixels, int width, int height, String filename, int page) throws FileNotFoundException {

@@ -29,6 +29,7 @@ import ij.process.ByteProcessor;
 import ij.process.FloatProcessor;
 import ij.process.ImageProcessor;
 import ij.util.ThreadUtil;
+import primesproject.ProgressBar;
 
 import java.awt.Point;
 import java.util.ArrayList;
@@ -161,14 +162,14 @@ public class WarpingError extends Metrics {
 	 * @return total warping error (it counts all type of mismatches as errors)
 	 */	
 	@Override
-	public double getMetricValue(double binaryThreshold) 	
+	public double getMetricValue(double binaryThreshold, ProgressBar pBar) 	
 	{		
 		if( verbose )
 			IJ.log("  Warping ground truth...");
 		
 		// Warp ground truth, relax original labels to proposal. Only simple
 		// points warping is allowed.
-		WarpingResults[] wrs = simplePointWarp2dMT(super.originalLabels, super.proposedLabels, mask, binaryThreshold);		
+		WarpingResults[] wrs = simplePointWarp2dMT(super.originalLabels, super.proposedLabels, mask, binaryThreshold, pBar);		
 
 		if(null == wrs)
 			return -1;
@@ -1642,6 +1643,77 @@ public class WarpingError extends Metrics {
 			ImagePlus source,
 			ImagePlus target,
 			ImagePlus mask,
+			double binaryThreshold,
+			ProgressBar pBar)
+	{
+		if(source.getWidth() != target.getWidth()
+				|| source.getHeight() != target.getHeight()
+				|| source.getImageStackSize() != target.getImageStackSize())
+		{
+			IJ.log("Error: label and training image sizes do not fit.");
+			return null;
+		}
+
+		final ImageStack sourceSlices = source.getImageStack();
+		final ImageStack targetSlices = target.getImageStack();
+		final ImageStack maskSlices = (null != mask) ? mask.getImageStack() : null;
+
+		final WarpingResults[] wrs = new WarpingResults[ source.getImageStackSize() ];
+
+		// Executor service to produce concurrent threads
+		final ExecutorService exe = Executors.newFixedThreadPool(Prefs.getThreads());
+
+		final ArrayList< Future<WarpingResults> > futures = new ArrayList< Future<WarpingResults> >();
+
+		try{
+			for(int i = 1; i <= sourceSlices.getSize(); i++)
+			{
+				try {
+				futures.add(exe.submit( simplePointWarp2DConcurrent(sourceSlices.getProcessor(i).convertToFloat(),
+										targetSlices.getProcessor(i).convertToFloat(),
+										null != maskSlices ? maskSlices.getProcessor(i) : null,
+										binaryThreshold ) ) );
+				}
+				catch (java.lang.OutOfMemoryError ex) {
+					System.gc();
+					i--;
+				}
+			}
+
+			//int i = 0;
+			// Wait for the jobs to be done
+			for(int i = 0; i < futures.size(); i++)
+			{
+				pBar.setContinuous(false);
+				pBar.setPercent((i * 100)/futures.size());
+				try {
+					Future<WarpingResults> f = futures.get(i);
+					wrs[ i ] = f.get();
+					//i++;
+				}
+				catch (java.lang.OutOfMemoryError ex) {
+					System.gc();
+					i--;
+				}
+			}
+			pBar.setContinuous(true);
+		}
+		catch(Exception ex)
+		{
+			IJ.log("Error when warping ground truth in a concurrent way.");
+			ex.printStackTrace();
+		}
+		finally{
+			exe.shutdown();
+		}
+
+		return wrs;
+	}
+	
+	public WarpingResults[] simplePointWarp2dMT(
+			ImagePlus source,
+			ImagePlus target,
+			ImagePlus mask,
 			double binaryThreshold)
 	{
 		if(source.getWidth() != target.getWidth()
@@ -2802,6 +2874,12 @@ public class WarpingError extends Metrics {
 			result.warpingError /= wrs.length;			
 			
 		return result;
+	}
+
+	@Override
+	public double getMetricValue(double binaryThreshold) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
     	
 } // end class WarpingError

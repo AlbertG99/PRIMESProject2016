@@ -1,3 +1,4 @@
+package primesproject;
 public class StringStorage {
 	String string;
 	

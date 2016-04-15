@@ -1,3 +1,4 @@
+package primesproject;
 import java.awt.Rectangle;
 
 import ij.ImagePlus;

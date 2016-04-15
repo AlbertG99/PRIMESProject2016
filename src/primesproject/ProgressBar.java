@@ -1,3 +1,4 @@
+package primesproject;
 import java.awt.Cursor;
 import java.awt.GridLayout;
 

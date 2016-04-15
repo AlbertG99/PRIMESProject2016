@@ -22,6 +22,7 @@ package trainableSegmentation.metrics;
 
 import ij.IJ;
 import ij.ImagePlus;
+import primesproject.ProgressBar;
 
 /**
  * This is the mother class for 2D segmentation metrics 
@@ -35,7 +36,7 @@ public abstract class Metrics
 	ImagePlus proposedLabels;
 	
 	/** boolean flag to set the level of detail on the standard output messages */
-	protected boolean verbose = true;
+	protected boolean verbose = false;
 
 	
 	public Metrics(ImagePlus originalLabels, ImagePlus proposedLabels)
@@ -88,6 +89,11 @@ public abstract class Metrics
 		if( verbose )
 			IJ.log(" ** Minimum metric value = " + min + ", with threshold = " + bestTh + " **\n");
 	    return min;
+	}
+
+	public double getMetricValue(double binaryThreshold, ProgressBar pBar) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	

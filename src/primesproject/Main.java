@@ -1,3 +1,4 @@
+package primesproject;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
@@ -5,7 +6,7 @@ import ij.IJ;
 import ij.ImagePlus;
 
 public class Main {
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception {		
 		System.gc();
 		
 		// Get inputs
@@ -55,8 +56,10 @@ public class Main {
 			pBar.setLabel("Getting TIFFs...");
 			ImagePlus originalLabels = IJ.openImage(originalLabelsPath);
 			ImagePlus proposedLabels = IJ.openImage(proposedLabelsPath);
+			pBar.setLabel("Creating mask...");
+			ImagePlus mask = ViewImage.create3DBlackImage(1000, 1000, originalLabels.getImageStackSize());
 			pBar.setLabel("Calculating error...");
-			errorVal = Errors.warpingError(originalLabels, proposedLabels);
+			errorVal = Errors.warpingError(originalLabels, proposedLabels, mask, pBar);
 			pBar.setVisible(false);
 			UserInterface.showPopupText("The " + error.toLowerCase() + " is: " + errorVal, true);
 		}

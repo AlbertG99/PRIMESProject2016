@@ -1,3 +1,4 @@
+package primesproject;
 import ij.IJ;
 import ij.ImagePlus;
 import trainableSegmentation.metrics.AdjustedRandError;
@@ -52,9 +53,9 @@ public class Errors {
 //		IJ.log("Rand error between source image " + originalLabels.getTitle() + " and target image " + proposedLabels.getTitle() + " = " + randError);
 	}
 
-	public static double warpingError (ImagePlus originalLabels, ImagePlus proposedLabels) { //Source: http://fiji.sc/Topology_preserving_warping_error
+	public static double warpingError (ImagePlus originalLabels, ImagePlus proposedLabels, ImagePlus mask, ProgressBar pBar) { //Source: http://fiji.sc/Topology_preserving_warping_error
 		// mask with geometric constraints
-		ImagePlus mask = IJ.openImage("/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/Example/Bandy.TIF", 1); // What is mask?
+//		ImagePlus mask = IJ.openImage("/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/Example/Bandy.TIF", 1); // What is mask?
 
 		// threshold to binarize labels (just in case they are not binary)
 		double threshold = 0.5;
@@ -62,7 +63,7 @@ public class Errors {
 		WarpingError metric = new WarpingError(originalLabels, proposedLabels, mask);
 		
 		System.gc();
-		double warpingError = metric.getMetricValue(threshold);
+		double warpingError = metric.getMetricValue(threshold, pBar);
 		
 		return warpingError;
 
