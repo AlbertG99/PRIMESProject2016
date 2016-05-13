@@ -1,5 +1,6 @@
 package primesproject;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -17,6 +18,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.border.TitledBorder;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -26,10 +28,20 @@ public class UserInterface {
 
 		final JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
-		c.fill = GridBagConstraints.HORIZONTAL;
 		c.ipadx = 0;
 		c.fill = GridBagConstraints.BOTH;
-		c.anchor = GridBagConstraints.CENTER;
+		c.anchor = GridBagConstraints.WEST;
+//		panel.setPreferredSize(new Dimension(513, 200));
+		
+		final JPanel pixelErrorPanel = new JPanel(new GridBagLayout());
+		GridBagLayout pixelLayout = new GridBagLayout();
+		GridBagConstraints pixelC = new GridBagConstraints();
+		pixelLayout.setConstraints(pixelErrorPanel, pixelC);
+		pixelC.ipadx = 0;
+		pixelC.fill = GridBagConstraints.NONE;
+		pixelC.anchor = GridBagConstraints.WEST;
+		TitledBorder title = BorderFactory.createTitledBorder("Pixel Error Options");
+		pixelErrorPanel.setBorder(title);
 
 		final StringStorage file1Path = new StringStorage("/Users/Albert/Google Drive/Boyden PRIMES/Example/Bandy-1.tif");
 		final JButton file1Button = new JButton("/Users/Albert/Google Drive/Boyden PRIMES/Example/Bandy-1.tif");
@@ -203,14 +215,22 @@ public class UserInterface {
 		panel.add(errorChoice, c);
 		c.gridy += 1;
 		c.gridx = 0;
-		panel.add(new JLabel("Create image?   "), c);
-		c.gridx = 1;
-		panel.add(createPixelImage, c);
+		c.gridwidth = 2;
+		panel.add(pixelErrorPanel, c);
 		c.gridy += 1;
-		c.gridx = 0;
-		panel.add(new JLabel("Image:"), c);
 		c.gridx = 1;
-		panel.add(graphButton, c);
+		panel.add(new JLabel("                                                                                                                      "), c);
+		
+		pixelC.gridy = 0;
+		pixelC.gridx = 0;
+		pixelErrorPanel.add(new JLabel("Create image?   "), pixelC);
+		pixelC.gridx = 1;
+		pixelErrorPanel.add(createPixelImage, pixelC);
+		pixelC.gridy += 1;
+		pixelC.gridx = 0;
+		pixelErrorPanel.add(new JLabel("Image:"), pixelC);
+		pixelC.gridx = 1;
+		pixelErrorPanel.add(graphButton, pixelC);
 		
 		JFrame frame = new JFrame();
 		frame.setResizable(false);

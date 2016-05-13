@@ -1,5 +1,4 @@
 package primesproject;
-import ij.IJ;
 import ij.ImagePlus;
 import trainableSegmentation.metrics.AdjustedRandError;
 import trainableSegmentation.metrics.PixelError;

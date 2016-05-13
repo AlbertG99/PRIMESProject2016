@@ -6,7 +6,7 @@ import ij.IJ;
 import ij.ImagePlus;
 
 public class Main {
-	public static void main(String[] args) throws Exception {		
+	public static void main(String[] args) throws Exception {
 		System.gc();
 		
 		// Get inputs
@@ -47,7 +47,7 @@ public class Main {
 			ImagePlus originalLabels = IJ.openImage(originalLabelsPath);
 			ImagePlus proposedLabels = IJ.openImage(proposedLabelsPath);
 			pBar.setLabel("Calculating error...");
-			errorVal = Errors.randError(originalLabels, proposedLabels);
+			errorVal = Errors.adjustedRandError(originalLabels, proposedLabels);
 			pBar.setVisible(false);
 			UserInterface.showPopupText("The " + error.toLowerCase() + " is: " + errorVal, true);
 		}
