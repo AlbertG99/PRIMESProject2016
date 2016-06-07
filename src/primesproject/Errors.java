@@ -1,9 +1,24 @@
 package primesproject;
+import java.awt.image.BufferedImage;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Vector;
+
+import org.scijava.vecmath.Point3f;
+
+import com.sun.media.jai.codec.ImageCodec;
+import com.sun.media.jai.codec.ImageEncoder;
+import com.sun.media.jai.codec.TIFFEncodeParam;
+
 import ij.ImagePlus;
 import trainableSegmentation.metrics.AdjustedRandError;
 import trainableSegmentation.metrics.PixelError;
 import trainableSegmentation.metrics.RandError;
 import trainableSegmentation.metrics.WarpingError;
+import trainableSegmentation.metrics.WarpingResults;
 
 public class Errors {
 	public static double pixelError (ImagePlus originalLabels, ImagePlus proposedLabels) {
@@ -52,7 +67,7 @@ public class Errors {
 //		IJ.log("Rand error between source image " + originalLabels.getTitle() + " and target image " + proposedLabels.getTitle() + " = " + randError);
 	}
 
-	public static double warpingError (ImagePlus originalLabels, ImagePlus proposedLabels, ImagePlus mask, ProgressBar pBar) { //Source: http://fiji.sc/Topology_preserving_warping_error
+	public static WarpingResults[] warpingError (ImagePlus originalLabels, ImagePlus proposedLabels, ImagePlus mask, ProgressBar pBar) { //Source: http://fiji.sc/Topology_preserving_warping_error
 		// mask with geometric constraints
 //		ImagePlus mask = IJ.openImage("/Users/Albert/Dropbox/Google Drive/Boyden PRIMES/Example/Bandy.TIF", 1); // What is mask?
 
@@ -61,10 +76,12 @@ public class Errors {
 
 		WarpingError metric = new WarpingError(originalLabels, proposedLabels, mask);
 		
-		System.gc();
-		double warpingError = metric.getMetricValue(threshold, pBar);
+		return metric.getWRS(threshold, pBar, 0);
 		
-		return warpingError;
+//		System.gc();
+//		double warpingError = metric.getMetricValue(threshold, pBar);
+//		
+//		return warpingError;
 
 //		IJ.log("Warping error between source image " + originalLabels.getTitle() + " and target image " + proposedLabels.getTitle() + " = " + warpingError);
 	}
@@ -133,5 +150,36 @@ public class Errors {
 		}
 
 		return comparison;
+	}
+	
+	// Warping error visualization
+	public static BufferedImage createWarpingErrorImage (int width, int height, ArrayList<Point3f> mismatches) {
+		BufferedImage bufferedImage = ViewImage.createBlackImage(width, height);
+		for (int i = 0; i < mismatches.size(); i++) {
+			bufferedImage.setRGB((int)mismatches.get(i).x, (int)mismatches.get(i).y, -1);
+		}
+		return bufferedImage;
+	}
+	
+	public static BufferedImage[] create3DWarpingErrorImage (int width, int height, WarpingResults[] wrs, String filename, ProgressBar pBar) throws IOException {
+		BufferedImage[] image = new BufferedImage[wrs.length];
+		for (int i = 0; i < wrs.length; i++) {
+			pBar.setPercent((i * 100) / wrs.length);
+			image[i] = createWarpingErrorImage(width, height, wrs[i].mismatches);
+		}
+		pBar.setContinuous(true);
+		pBar.setLabel("Saving image...");
+		TIFFEncodeParam params = new TIFFEncodeParam();
+		OutputStream out = new FileOutputStream(filename); 
+		ImageEncoder encoder = ImageCodec.createImageEncoder("tiff", out, params);
+		Vector<BufferedImage> vector = new Vector<BufferedImage>();   
+		for (int i = 0; i < wrs.length; i++) {
+		    vector.add(image[i]);
+		}
+		params.setExtraImages(vector.iterator());
+		encoder.encode(image[0]); 
+		out.close();
+		
+		return image;
 	}
 }

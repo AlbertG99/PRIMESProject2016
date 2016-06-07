@@ -47,6 +47,14 @@ public class ViewImage {
 		return bufferedImage;
 	}
 	
+	public static BufferedImage createWhiteImage (int width, int height) {
+		BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		for (int i = 0; i < width * height; i++) {
+			bufferedImage.setRGB(i % width, i / width, 0);
+		}
+		return bufferedImage;
+	}
+	
 	public static ImagePlus create3DBlackImage (int width, int height, int pages) {
 		ImageStack stack = new ImageStack(width, height, pages);
 		ImagePlus implus = new ImagePlus ("Mask", createBlackImage(width, height));

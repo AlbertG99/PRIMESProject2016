@@ -4,9 +4,13 @@ import java.util.ArrayList;
 
 import ij.IJ;
 import ij.ImagePlus;
+import trainableSegmentation.metrics.WarpingError;
+import trainableSegmentation.metrics.WarpingResults;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
+//		Tiff.getMat("/Users/Albert/Desktop/Segmentations/Alik_Composite_Tile_00014_sig1000_HMINTH0.008_sUB31_cUB0.03_detTh5e-11_subdivTh2_minVox10_cc40.mat");
+//		System.exit(0);
 		System.gc();
 		
 		// Get inputs
@@ -59,9 +63,20 @@ public class Main {
 			pBar.setLabel("Creating mask...");
 			ImagePlus mask = ViewImage.create3DBlackImage(1000, 1000, originalLabels.getImageStackSize());
 			pBar.setLabel("Calculating error...");
-			errorVal = Errors.warpingError(originalLabels, proposedLabels, mask, pBar);
-			pBar.setVisible(false);
-			UserInterface.showPopupText("The " + error.toLowerCase() + " is: " + errorVal, true);
+			WarpingResults[] wrs = Errors.warpingError(originalLabels, proposedLabels, mask, pBar);
+			errorVal = WarpingError.getMetricValue(wrs);
+			if (createPixelImage) {
+				String filename = graphPath;
+				pBar.setLabel("Creating image...");
+				System.out.println(wrs[0].mismatches);
+				BufferedImage[] imageList = Errors.create3DWarpingErrorImage(originalLabels.getWidth(), originalLabels.getHeight(), wrs, filename, pBar);
+				pBar.setVisible(false);
+				ViewImage.view3DImage(filename, "The " + error.toLowerCase() + " is: " + errorVal);
+			}
+			else {
+				pBar.setVisible(false);
+				UserInterface.showPopupText("The " + error.toLowerCase() + " is: " + errorVal, true);
+			}
 		}
 		
 		System.exit(0); // Exit application		

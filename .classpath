@@ -267,5 +267,6 @@
 	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageIo-Ext/turbojpeg-wrapper-1.2.1.1.jar"/>
 	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/ImageJ API/ij.jar"/>
 	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/JDeli/jdeli.jar"/>
+	<classpathentry kind="lib" path="/Users/Albert/Google Drive/Boyden PRIMES/PRIMESProject/jars/JMatIO/jamtio.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

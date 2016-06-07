@@ -40,7 +40,7 @@ public class UserInterface {
 		pixelC.ipadx = 0;
 		pixelC.fill = GridBagConstraints.NONE;
 		pixelC.anchor = GridBagConstraints.WEST;
-		TitledBorder title = BorderFactory.createTitledBorder("Pixel Error Options");
+		TitledBorder title = BorderFactory.createTitledBorder("Visualization Options");
 		pixelErrorPanel.setBorder(title);
 
 		final StringStorage file1Path = new StringStorage("/Users/Albert/Google Drive/Boyden PRIMES/Example/Bandy-1.tif");
@@ -186,7 +186,7 @@ public class UserInterface {
 		final JComboBox<String> errorChoice = new JComboBox<String>(errors);
 		errorChoice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
-				if (errorChoice.getSelectedItem() == "Pixel Error") {
+				if (errorChoice.getSelectedItem() != "Rand Error") {
 					createPixelImage.setEnabled(true);
 				}
 				else {

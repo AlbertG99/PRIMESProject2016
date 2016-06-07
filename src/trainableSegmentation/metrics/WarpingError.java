@@ -164,13 +164,23 @@ public class WarpingError extends Metrics {
 	@Override
 	public double getMetricValue(double binaryThreshold, ProgressBar pBar) 	
 	{		
+		return 0;
+	}
+	
+	public WarpingResults[] getWRS (double binaryThreshold, ProgressBar pBar, int i) {
 		if( verbose )
 			IJ.log("  Warping ground truth...");
 		
 		// Warp ground truth, relax original labels to proposal. Only simple
 		// points warping is allowed.
-		WarpingResults[] wrs = simplePointWarp2dMT(super.originalLabels, super.proposedLabels, mask, binaryThreshold, pBar);		
-
+		WarpingResults[] wrs = simplePointWarp2dMT(super.originalLabels, super.proposedLabels, mask, binaryThreshold, pBar);
+//		System.out.println(wrs.length);
+		System.out.println(wrs[i].mismatches);
+		
+		return wrs;
+	}
+	
+	public static double getMetricValue(WarpingResults[] wrs) {
 		if(null == wrs)
 			return -1;
 
