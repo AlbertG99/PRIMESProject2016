@@ -1,5 +1,4 @@
 package primesproject;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 import ij.IJ;
@@ -9,8 +8,6 @@ import trainableSegmentation.metrics.WarpingResults;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
-//		Tiff.getMat("/Users/Albert/Desktop/Segmentations/Alik_Composite_Tile_00014_sig1000_HMINTH0.008_sUB31_cUB0.03_detTh5e-11_subdivTh2_minVox10_cc40.mat");
-//		System.exit(0);
 		System.gc();
 		
 		// Get inputs
@@ -30,13 +27,14 @@ public class Main {
 			pBar.setLabel("Getting TIFFs...");
 			Tiff originalLabels = new Tiff(originalLabelsPath);
 			Tiff proposedLabels = new Tiff(proposedLabelsPath);
+			checkCompatibility(originalLabels, proposedLabels);
 			byte[][] fullOutput = Errors.pixelErrorArray(originalLabels, proposedLabels);
 			pBar.setLabel("Calculating error...");
 			errorVal = Errors.pixelError(originalLabels.getNumPages(), originalLabels.getNumPixels(), fullOutput);
 			if (createPixelImage) {
 				String filename = graphPath;
 				pBar.setLabel("Creating image...");
-				BufferedImage[] imageList = ViewImage.create3DBufferedImage(fullOutput, originalLabels.getWidth(), originalLabels.getHeight(), filename, pBar);
+				ViewImage.create3DBufferedImage(fullOutput, originalLabels.getWidth(), originalLabels.getHeight(), filename, pBar);
 				pBar.setVisible(false);
 				ViewImage.view3DImage(filename, "The " + error.toLowerCase() + " is: " + errorVal);
 			}
@@ -50,6 +48,7 @@ public class Main {
 			pBar.setLabel("Getting TIFFs...");
 			ImagePlus originalLabels = IJ.openImage(originalLabelsPath);
 			ImagePlus proposedLabels = IJ.openImage(proposedLabelsPath);
+			checkCompatibility(originalLabels, proposedLabels);
 			pBar.setLabel("Calculating error...");
 			errorVal = Errors.adjustedRandError(originalLabels, proposedLabels);
 			pBar.setVisible(false);
@@ -60,6 +59,7 @@ public class Main {
 			pBar.setLabel("Getting TIFFs...");
 			ImagePlus originalLabels = IJ.openImage(originalLabelsPath);
 			ImagePlus proposedLabels = IJ.openImage(proposedLabelsPath);
+			checkCompatibility(originalLabels, proposedLabels);
 			pBar.setLabel("Creating mask...");
 			ImagePlus mask = ViewImage.create3DBlackImage(1000, 1000, originalLabels.getImageStackSize());
 			pBar.setLabel("Calculating error...");
@@ -68,8 +68,7 @@ public class Main {
 			if (createPixelImage) {
 				String filename = graphPath;
 				pBar.setLabel("Creating image...");
-				System.out.println(wrs[0].mismatches);
-				BufferedImage[] imageList = Errors.create3DWarpingErrorImage(originalLabels.getWidth(), originalLabels.getHeight(), wrs, filename, pBar);
+				Errors.create3DWarpingErrorImage(originalLabels, proposedLabels, wrs, filename, pBar);
 				pBar.setVisible(false);
 				ViewImage.view3DImage(filename, "The " + error.toLowerCase() + " is: " + errorVal);
 			}
@@ -98,5 +97,25 @@ public class Main {
 		if (tiff1Width != tiff2Width) {
 			throw new Exception("TIFF widths do not match.");
 		}
+		System.exit(0);
+	}
+	
+	public static void checkCompatibility (ImagePlus tiff1, ImagePlus tiff2) throws Exception { // Checks if two TIFF files are compatible and can be further worked with
+		// Check if number of pages matches
+		int numPages = tiff1.getImageStackSize();
+		if (numPages != tiff2.getImageStackSize()) {
+			throw new Exception("TIFF number of pages do not match.");
+		}
+		// Check if heights match
+		int tiff1Height = tiff1.getHeight(); int tiff2Height = tiff2.getHeight();
+		if (tiff1Height != tiff2Height) {
+			throw new Exception("TIFF heights do not match.");
+		}
+		// Check if widths match
+		int tiff1Width = tiff1.getWidth(); int tiff2Width = tiff2.getWidth();
+		if (tiff1Width != tiff2Width) {
+			throw new Exception("TIFF widths do not match.");
+		}
+		System.exit(0);
 	}
 }

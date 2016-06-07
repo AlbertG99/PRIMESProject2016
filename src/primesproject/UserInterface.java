@@ -1,6 +1,5 @@
 package primesproject;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -200,12 +199,12 @@ public class UserInterface {
 		c.ipady = 0;
 		c.gridy = 0;
 		c.gridx = 0;
-		panel.add(new JLabel("TIFF 1:"), c);
+		panel.add(new JLabel("Ground Truth:"), c);
 		c.gridx = 1;
 		panel.add(file1Button, c);
 		c.gridy += 1;
 		c.gridx = 0;
-		panel.add(new JLabel("TIFF 2:"), c);
+		panel.add(new JLabel("Segmentation:"), c);
 		c.gridx = 1;
 		panel.add(file2Button, c);
 		c.gridy += 1;

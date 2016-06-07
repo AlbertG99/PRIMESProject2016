@@ -1,6 +1,6 @@
 package primesproject;
+import java.awt.Color;
 import java.awt.image.BufferedImage;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -14,6 +14,7 @@ import com.sun.media.jai.codec.ImageEncoder;
 import com.sun.media.jai.codec.TIFFEncodeParam;
 
 import ij.ImagePlus;
+import ij.ImageStack;
 import trainableSegmentation.metrics.AdjustedRandError;
 import trainableSegmentation.metrics.PixelError;
 import trainableSegmentation.metrics.RandError;
@@ -153,19 +154,42 @@ public class Errors {
 	}
 	
 	// Warping error visualization
-	public static BufferedImage createWarpingErrorImage (int width, int height, ArrayList<Point3f> mismatches) {
-		BufferedImage bufferedImage = ViewImage.createBlackImage(width, height);
+	public static BufferedImage createWarpingErrorImage (int width, int height, ArrayList<Point3f> mismatches, BufferedImage originalImage, BufferedImage proposedImage) {
+		BufferedImage bufferedImage = ViewImage.createColorImage(width, height, new Color(105, 105, 105));
+//		BufferedImage bufferedImage = originalImage;
 		for (int i = 0; i < mismatches.size(); i++) {
-			bufferedImage.setRGB((int)mismatches.get(i).x, (int)mismatches.get(i).y, -1);
+			bufferedImage.setRGB((int)mismatches.get(i).x, (int)mismatches.get(i).y, new Color(255, 0, 0).getRGB());
+		}
+		for (int i = 0; i < originalImage.getWidth(); i++) {
+			for (int j = 0; j < originalImage.getHeight(); j++) {
+				int origColor = originalImage.getRGB(i, j);
+				int propColor = proposedImage.getRGB(i, j);
+				if (origColor == new Color(255, 255, 255).getRGB() && propColor == new Color(255, 255, 255).getRGB()) {
+					bufferedImage.setRGB(i, j, new Color(255, 255, 255).getRGB());
+				}
+				else if (origColor == new Color(255, 255, 255).getRGB() && bufferedImage.getRGB(i, j) == new Color(255, 0, 0).getRGB()) {
+					bufferedImage.setRGB(i, j, new Color(0, 0, 255).getRGB());
+				}
+				else if (propColor == new Color(255, 255, 255).getRGB() && bufferedImage.getRGB(i, j) == new Color(255, 0, 0).getRGB()) {
+					bufferedImage.setRGB(i, j, new Color(0, 255, 0).getRGB());
+				}
+				else {
+					bufferedImage.setRGB(i, j, new Color(105, 105, 105).getRGB());
+				}
+			}
 		}
 		return bufferedImage;
 	}
 	
-	public static BufferedImage[] create3DWarpingErrorImage (int width, int height, WarpingResults[] wrs, String filename, ProgressBar pBar) throws IOException {
+	public static BufferedImage[] create3DWarpingErrorImage (ImagePlus originalLabels, ImagePlus proposedLabels, WarpingResults[] wrs, String filename, ProgressBar pBar) throws IOException {
+		int width = originalLabels.getWidth();
+		int height = originalLabels.getHeight();
+		ImageStack originalStack = originalLabels.getStack();
+		ImageStack proposedStack = proposedLabels.getStack();
 		BufferedImage[] image = new BufferedImage[wrs.length];
 		for (int i = 0; i < wrs.length; i++) {
 			pBar.setPercent((i * 100) / wrs.length);
-			image[i] = createWarpingErrorImage(width, height, wrs[i].mismatches);
+			image[i] = createWarpingErrorImage(width, height, wrs[i].mismatches, originalStack.getProcessor(i + 1).getBufferedImage(), proposedStack.getProcessor(i + 1).getBufferedImage());
 		}
 		pBar.setContinuous(true);
 		pBar.setLabel("Saving image...");

@@ -171,11 +171,13 @@ public class WarpingError extends Metrics {
 		if( verbose )
 			IJ.log("  Warping ground truth...");
 		
+		System.gc();
+		
 		// Warp ground truth, relax original labels to proposal. Only simple
 		// points warping is allowed.
 		WarpingResults[] wrs = simplePointWarp2dMT(super.originalLabels, super.proposedLabels, mask, binaryThreshold, pBar);
 //		System.out.println(wrs.length);
-		System.out.println(wrs[i].mismatches);
+//		System.out.println(wrs[i].mismatches);
 		
 		return wrs;
 	}

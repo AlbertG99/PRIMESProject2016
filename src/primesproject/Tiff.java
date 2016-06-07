@@ -1,18 +1,14 @@
 package primesproject;
-import com.jmatio.io.*;
-import com.jmatio.types.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
-import java.util.Map;
 
 import javax.imageio.ImageIO;
 
 import com.idrsolutions.image.tiff.TiffDecoder;
-import com.jmatio.io.MatFileReader;
 
 public class Tiff {
 //	private String filepath;
@@ -29,13 +25,6 @@ public class Tiff {
 			BufferedImage decodedImage = decoder.read(i);
 			pages[i - 1] = decodedImage;
 		}
-	}
-	
-	public static void getMat (String filepath) throws Exception {
-		File file = new File(filepath);
-		MatFileReader reader = new MatFileReader(file);
-		double[][] mlArrayDouble = ((MLDouble) reader.getMLArray("data")).getArray(); 
-//		System.out.println(map.keySet());
 	}
 	
 	public Tiff (byte[][] byteArray) throws IOException {

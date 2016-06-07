@@ -47,10 +47,10 @@ public class ViewImage {
 		return bufferedImage;
 	}
 	
-	public static BufferedImage createWhiteImage (int width, int height) {
+	public static BufferedImage createColorImage (int width, int height, Color color) {
 		BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 		for (int i = 0; i < width * height; i++) {
-			bufferedImage.setRGB(i % width, i / width, 0);
+			bufferedImage.setRGB(i % width, i / width, color.getRGB());
 		}
 		return bufferedImage;
 	}
@@ -89,6 +89,18 @@ public class ViewImage {
 				color = new Color(0, 255, 0).getRGB();
 			}
 			bufferedImage.setRGB(i % width, i / width, color);
+		}
+		
+		return bufferedImage;
+	}
+	
+	public static BufferedImage createBufferedImage (float[][] pixels) throws FileNotFoundException {		
+		BufferedImage bufferedImage = new BufferedImage(pixels.length, pixels[0].length, BufferedImage.TYPE_INT_RGB);
+		
+		for (int i = 0; i < pixels.length; i++) {
+			for (int j = 0; j < pixels[0].length; j++) {
+				bufferedImage.setRGB(i, i, (int)pixels[i][j]);
+			}
 		}
 		
 		return bufferedImage;
@@ -193,12 +205,12 @@ public class ViewImage {
 		white.setBackground(new Color(255, 255, 255));
 		panel.add(white, c);
 		c.gridx += 1;
-		JTextField blue = new JTextField("Only 1", 10);
+		JTextField blue = new JTextField("Only Truth", 10);
 		blue.setEditable(false);
 		blue.setBackground(new Color(0, 0, 255));
 		panel.add(blue, c);
 		c.gridx += 1;
-		JTextField green = new JTextField("Only 2", 10);
+		JTextField green = new JTextField("Only Segmentation", 10);
 		green.setEditable(false);
 		green.setBackground(new Color(0, 255, 0));
 		panel.add(green, c);
