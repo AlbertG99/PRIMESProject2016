@@ -5,6 +5,7 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.Arrays;
 
 import javax.imageio.ImageIO;
 
@@ -25,6 +26,7 @@ public class Tiff {
 			BufferedImage decodedImage = decoder.read(i);
 			pages[i - 1] = decodedImage;
 		}
+//		System.out.println(Arrays.toString(getPixels(0)));
 	}
 	
 	public Tiff (byte[][] byteArray) throws IOException {

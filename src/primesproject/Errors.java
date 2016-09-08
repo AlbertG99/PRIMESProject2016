@@ -136,18 +136,65 @@ public class Errors {
 		for (int i = 0; i < numPixels; i++) {
 			page1Pix = page1[i];
 			page2Pix = page2[i];
-			if (page1Pix == -1 && page2Pix == 0) {
+//			if (page1Pix == -1 && page2Pix == 0) {
+//				comparison[i] = 1;
+//			}
+//			else if (page1Pix == 0 && page2Pix == -1) {
+//				comparison[i] = 2;
+//			}
+//			else if (page1Pix == -1 && page2Pix == -1) {
+//				comparison[i] = 3;
+//			}
+//			else { //if (page1Pix == 0 && page2Pix == 0)
+//				comparison[i] = 0;
+//			}
+			
+//			if (page1Pix == page2Pix && page1Pix != 0) { //latest
+//				comparison[i] = 3; //White
+//			}
+//			else if (page1Pix == 0 && page2Pix == 0) {
+//				comparison[i] = 0; //Black
+//			}
+//			else if (page1Pix != 0) {
+//				comparison[i] = 1;
+//			}
+//			else {
+//				comparison[i] = 2;
+//			}
+			
+			if (page1Pix != 0 && page2Pix != 0) {
+				comparison[i] = 3; //White
+			}
+			else if (page1Pix == 0 && page2Pix == 0) {
+				comparison[i] = 0; //Black
+			}
+			else if (page1Pix != 0) {
 				comparison[i] = 1;
 			}
-			else if (page1Pix == 0 && page2Pix == -1) {
+			else {
 				comparison[i] = 2;
 			}
-			else if (page1Pix == -1 && page2Pix == -1) {
-				comparison[i] = 3;
-			}
-			else { //if (page1Pix == 0 && page2Pix == 0)
-				comparison[i] = 0;
-			}
+			
+//			if (page1Pix != 0 && page2Pix == 0) {
+//				comparison[i] = 1;
+//			}
+//			else if (page1Pix == 0 && page2Pix != 0) {
+//				comparison[i] = 2;
+//			}
+//			else if (page1Pix != 0 && page2Pix != 0) {
+//				comparison[i] = 3;
+//			}
+//			else { //if (page1Pix == 0 && page2Pix == 0)
+//				comparison[i] = 0;
+//			}
+			
+			// If agree, white; if disagree, black
+//			if (page1Pix == page2Pix && page1Pix != 0) {
+//				comparison[i] = 3;
+//			}
+//			else {
+//				comparison[i] = 0;
+//			}
 		}
 
 		return comparison;
@@ -164,7 +211,8 @@ public class Errors {
 			for (int j = 0; j < originalImage.getHeight(); j++) {
 				int origColor = originalImage.getRGB(i, j);
 				int propColor = proposedImage.getRGB(i, j);
-				if (origColor == new Color(255, 255, 255).getRGB() && propColor == new Color(255, 255, 255).getRGB()) {
+				
+				if (propColor == new Color(255, 255, 255).getRGB() && bufferedImage.getRGB(i, j) != new Color(255, 0, 0).getRGB()) {
 					bufferedImage.setRGB(i, j, new Color(255, 255, 255).getRGB());
 				}
 				else if (origColor == new Color(255, 255, 255).getRGB() && bufferedImage.getRGB(i, j) == new Color(255, 0, 0).getRGB()) {
@@ -197,7 +245,7 @@ public class Errors {
 		OutputStream out = new FileOutputStream(filename); 
 		ImageEncoder encoder = ImageCodec.createImageEncoder("tiff", out, params);
 		Vector<BufferedImage> vector = new Vector<BufferedImage>();   
-		for (int i = 0; i < wrs.length; i++) {
+		for (int i = 1; i < wrs.length; i++) {
 		    vector.add(image[i]);
 		}
 		params.setExtraImages(vector.iterator());

@@ -118,11 +118,12 @@ public class ViewImage {
 		OutputStream out = new FileOutputStream(filename); 
 		ImageEncoder encoder = ImageCodec.createImageEncoder("tiff", out, params);
 		Vector<BufferedImage> vector = new Vector<BufferedImage>();   
-		for (int i = 0; i < pixels.length; i++) {
-		    vector.add(image[i]); 
+//		System.out.println(image.length);
+		for (int i = 1; i < pixels.length; i++) {
+		    vector.add(image[i]);
 		}
 		params.setExtraImages(vector.iterator()); 
-		encoder.encode(image[0]); 
+		encoder.encode(image[0]);
 		out.close();
 		
 		return image;
@@ -200,7 +201,7 @@ public class ViewImage {
 		});
 		c.gridwidth = 1;
 		c.gridx = 0;
-		JTextField white = new JTextField("Both", 10);
+		JTextField white = new JTextField("Both / Correct", 10);
 		white.setEditable(false);
 		white.setBackground(new Color(255, 255, 255));
 		panel.add(white, c);
@@ -318,7 +319,7 @@ public class ViewImage {
 		JOptionPane.showMessageDialog(null, panel);
 	}
 	
-	public static void view3DImage (BufferedImage[] imageList, String label) throws Exception {
+	public static void view3DImage (BufferedImage[] imageList, String label) {
 		BufferedImage image = imageList[0];
 		int numPages = imageList.length;
 		Image imageScaled = image.getScaledInstance(500, -1,  Image.SCALE_SMOOTH);

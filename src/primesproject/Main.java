@@ -18,6 +18,12 @@ public class Main {
 		boolean createPixelImage = (boolean)inputs.get(3);
 		String graphPath = ((StringStorage)inputs.get(4)).toString();
 		
+		originalLabelsPath = "/Users/Albert/Google Drive/Boyden PRIMES/Data/Multicell Simulated Data (filled)/brainbow_cyto_dense/segs/brainbow_cyto_dense_gt.tif";
+//		proposedLabelsPath = "/Users/Albert/Google Drive/Boyden PRIMES/Data/Simulated Data/simulation2 segs/simulation2_sig500_HMINTH0.008_sUB31_cUB0.1_detTh5e-11_subdivTh10_minVox10_cc30.tif";
+//		proposedLabelsPath = originalLabelsPath;
+		proposedLabelsPath = "/Users/Albert/Google Drive/Boyden PRIMES/Data/Multicell Simulated Data (filled)/brainbow_cyto_dense/segs/converted.tif";
+
+		
 		// Create progress bar
 		ProgressBar pBar = new ProgressBar();
 		
@@ -25,6 +31,7 @@ public class Main {
 		if (error.equals("Pixel Error")) { // Run pixel error
 			pBar.setTitle("Running pixel error...");
 			pBar.setLabel("Getting TIFFs...");
+//			ViewImage.view3DImage(originalLabelsPath, "Test");
 			Tiff originalLabels = new Tiff(originalLabelsPath);
 			Tiff proposedLabels = new Tiff(proposedLabelsPath);
 			checkCompatibility(originalLabels, proposedLabels);
@@ -97,7 +104,6 @@ public class Main {
 		if (tiff1Width != tiff2Width) {
 			throw new Exception("TIFF widths do not match.");
 		}
-		System.exit(0);
 	}
 	
 	public static void checkCompatibility (ImagePlus tiff1, ImagePlus tiff2) throws Exception { // Checks if two TIFF files are compatible and can be further worked with
@@ -116,6 +122,5 @@ public class Main {
 		if (tiff1Width != tiff2Width) {
 			throw new Exception("TIFF widths do not match.");
 		}
-		System.exit(0);
 	}
 }
