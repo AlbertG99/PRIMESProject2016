@@ -8,6 +8,8 @@ import trainableSegmentation.metrics.WarpingResults;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
+//		ViewImage.view3DImage("/Users/Albert/Google Drive/Boyden PRIMES/Example/Testing/Compared-Unfilled.tif", "The warping error is: 0.019187266791044776");
+		
 		System.gc();
 		
 		// Get inputs
@@ -18,11 +20,10 @@ public class Main {
 		boolean createPixelImage = (boolean)inputs.get(3);
 		String graphPath = ((StringStorage)inputs.get(4)).toString();
 		
-		originalLabelsPath = "/Users/Albert/Google Drive/Boyden PRIMES/Data/Multicell Simulated Data (filled)/brainbow_cyto_dense/segs/brainbow_cyto_dense_gt.tif";
+//		originalLabelsPath = "/Users/Albert/Google Drive/Boyden PRIMES/Example/Bandy-1.tif";
 //		proposedLabelsPath = "/Users/Albert/Google Drive/Boyden PRIMES/Data/Simulated Data/simulation2 segs/simulation2_sig500_HMINTH0.008_sUB31_cUB0.1_detTh5e-11_subdivTh10_minVox10_cc30.tif";
 //		proposedLabelsPath = originalLabelsPath;
-		proposedLabelsPath = "/Users/Albert/Google Drive/Boyden PRIMES/Data/Multicell Simulated Data (filled)/brainbow_cyto_dense/segs/converted.tif";
-
+//		proposedLabelsPath = "/Users/Albert/Google Drive/Boyden PRIMES/Example/Uygar-1.tif";
 		
 		// Create progress bar
 		ProgressBar pBar = new ProgressBar();
@@ -124,3 +125,46 @@ public class Main {
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

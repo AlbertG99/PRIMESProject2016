@@ -43,7 +43,7 @@ public class UserInterface {
 		pixelErrorPanel.setBorder(title);
 
 		final StringStorage file1Path = new StringStorage("/Users/Albert/Google Drive/Boyden PRIMES/Example/Bandy-1.tif");
-		final JButton file1Button = new JButton("/Users/Albert/Google Drive/Boyden PRIMES/Example/Bandy-1.tif");
+		final JButton file1Button = new JButton("                              Desktop/ground-truth.tif                              ");
 		file1Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
 				JFileChooser fileChooser = new JFileChooser();
@@ -85,7 +85,7 @@ public class UserInterface {
 		});
 		
 		final StringStorage file2Path = new StringStorage("/Users/Albert/Google Drive/Boyden PRIMES/Example/Uygar-1.tif");
-		final JButton file2Button = new JButton("/Users/Albert/Google Drive/Boyden PRIMES/Example/Uygar-1.tif");
+		final JButton file2Button = new JButton("Desktop/segmentation.tif");
 		file2Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
 				JFileChooser fileChooser = new JFileChooser();
@@ -127,7 +127,7 @@ public class UserInterface {
 		});
 		
 		final StringStorage graphPath = new StringStorage("/Users/Albert/Desktop/image_test.tif");
-		final JButton graphButton = new JButton("/Users/Albert/Desktop/image_test.tif");
+		final JButton graphButton = new JButton("                            Desktop/image_test.tif                            ");
 		graphButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
 				JFileChooser fileChooser = new JFileChooser();
@@ -266,3 +266,25 @@ public class UserInterface {
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
