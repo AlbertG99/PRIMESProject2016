@@ -25,6 +25,9 @@ public class Main {
 //		proposedLabelsPath = originalLabelsPath;
 //		proposedLabelsPath = "/Users/Albert/Google Drive/Boyden PRIMES/Example/Uygar-1.tif";
 		
+		originalLabelsPath = "/Users/Albert/Google Drive/Boyden PRIMES/Data/simulation2 results/simulation2_gt_fixed.tif";
+		proposedLabelsPath = "/Users/Albert/Google Drive/Boyden PRIMES/Data/simulation2 results/seg_filled.tif";
+		
 		// Create progress bar
 		ProgressBar pBar = new ProgressBar();
 		
