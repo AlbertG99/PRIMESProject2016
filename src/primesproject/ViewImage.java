@@ -209,6 +209,7 @@ public class ViewImage {
 		JTextField blue = new JTextField("Only Truth", 10);
 		blue.setEditable(false);
 		blue.setBackground(new Color(0, 0, 255));
+		blue.setForeground(new Color(255, 255, 255));
 		panel.add(blue, c);
 		c.gridx += 1;
 		JTextField green = new JTextField("Only Segmentation", 10);
@@ -219,6 +220,7 @@ public class ViewImage {
 		JTextField black = new JTextField("Neither", 10);
 		black.setEditable(false);
 		black.setBackground(new Color(105, 105, 105));
+		black.setForeground(new Color(255, 255, 255));
 		panel.add(black, c);
 		c.gridy += 1;
 		c.gridx = 0;
